@@ -70,6 +70,14 @@ Em `site/css/efeitos.css`, apague ou comente (entre `/*` e `*/`) o bloco do efei
 
 ## Publicar
 
-Envie a pasta `site/` inteira para a hospedagem (Netlify, Vercel, Hostinger). Antes, confira o `documentos/relatorio-pendencias.html`.
+O site está no GitHub (gustafraga/lp_macedoGold) e o Vercel publica sozinho a cada envio. O arquivo `vercel.json` diz ao Vercel para usar a pasta `site/`. No painel do Vercel, deixe "Root Directory" vazio e "Framework Preset" como Other.
+
+Para publicar uma mudança: rode `montar.cmd` (se mexeu em `fonte/`) e depois, na pasta Macedo Gold:
+
+    git add -A
+    git commit -m "o que mudou"
+    git push
+
+Antes de publicar a versão final, confira o `documentos/relatorio-pendencias.html`.
 
 Quando o site tiver domínio, coloque-o em `fonte/paginas.json` e rode `montar.cmd`. Isso gera o `sitemap.xml` para o Google e corrige os links de compartilhamento.

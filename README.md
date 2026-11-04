@@ -4,7 +4,7 @@ Site e identidade visual do Macedo Gold Hotel, em Xique-Xique (BA).
 
 - **Ver o site:** abra `site/index.html` no navegador.
 - **Editar:** leia `COMO-EDITAR.md`.
-- **Publicar:** envie a pasta `site/` para a hospedagem.
+- **Publicar:** é automático pelo Vercel a cada `git push` (o `vercel.json` aponta para a pasta `site/`).
 
 ## Pastas
 
@@ -14,6 +14,7 @@ Macedo Gold/
 ├── COMO-EDITAR.md                 Guia para mudar contatos, textos, fotos e cores
 ├── montar.cmd                     Dois cliques: gera as páginas de site/ a partir de fonte/
 ├── montar.ps1                     O script que o montar.cmd executa
+├── vercel.json                    Diz ao Vercel para publicar a pasta site/
 │
 ├── fonte/                         ONDE OS TEXTOS SÃO EDITADOS
 │   ├── paginas.json               Título e descrição (Google) de cada página, domínio
