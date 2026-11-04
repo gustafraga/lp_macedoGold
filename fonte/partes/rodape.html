@@ -1,0 +1,58 @@
+<footer class="rodape">
+  <div class="conteudo rodape-marca" aria-hidden="true">
+    <img src="assets/logo/simbolo-m.png" alt="" width="64" height="64" loading="lazy">
+    <b>Macedo</b>
+    <small>Gold Hotel</small>
+  </div>
+  <div class="conteudo rodape-grade">
+    <div class="rodape-sobre">
+      <a class="marca" href="index.html"><img src="assets/logo/simbolo-m.png" alt="" width="44" height="44" loading="lazy"><span class="marca-nome"><b>Macedo</b><small>Gold Hotel</small></span></a>
+      <p>Hotel e restaurante da família Macedo, no Centro de Xique-Xique, às margens do São Francisco.</p>
+    </div>
+    <nav aria-label="Páginas">
+      <h2>Páginas</h2>
+      <ul><li><a href="index.html">Início</a></li><li><a href="suites.html">Suítes</a></li><li><a href="restaurante.html">Restaurante</a></li><li><a href="contato.html">Contato</a></li></ul>
+    </nav>
+    <div>
+      <h2>Fale com a gente</h2>
+      <ul>
+        <li><a data-whats href="contato.html">WhatsApp <span data-texto="whatsappTexto"></span></a></li>
+        <li><a data-ligar href="contato.html">Telefone da recepção <span data-texto="telefoneTexto"></span></a></li>
+        <li><a data-link="email" href="contato.html"><span data-texto="email">E-mail</span></a></li>
+        <li><a data-link="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a data-link="facebook" href="https://www.facebook.com/HotelGoldMacedo/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Endereço</h2>
+      <ul><li>Rua Erotides Nogueira, 710</li><li>Centro, Xique-Xique, BA</li><li>CEP 47400-000</li></ul>
+    </div>
+  </div>
+  <div class="conteudo rodape-base">
+    <span>© <span data-ano>2026</span> Macedo Gold Hotel. Pousada Macedo LTDA, CNPJ 31.122.432/0001-07.</span>
+    <span>Xique-Xique, Bahia</span>
+  </div>
+</footer>
+
+<div class="barra-celular">
+  <a class="botao botao-ouro" href="contato.html#reservar" data-abrir-reserva><svg><use href="#i-cal"/></svg>Reservar</a>
+  <a class="botao botao-linha" data-ligar href="contato.html"><svg><use href="#i-tel"/></svg>Ligar</a>
+</div>
+
+<div class="visor" role="dialog" aria-modal="true" aria-label="Fotos do hotel" hidden>
+  <div class="visor-topo"><span data-legenda></span><button type="button" data-visor-fechar aria-label="Fechar fotos"><svg><use href="#i-fechar"/></svg></button></div>
+  <figure><img src="assets/logo/simbolo-m.png" alt=""></figure>
+  <div class="visor-nav">
+    <button type="button" data-visor-ant aria-label="Foto anterior"><svg><use href="#i-esq"/></svg></button>
+    <button type="button" data-visor-prox aria-label="Próxima foto"><svg><use href="#i-dir"/></svg></button>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/reserva.js"></script>
+<script src="js/animacoes.js"></script>
+</body>
+</html>

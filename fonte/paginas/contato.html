@@ -1,0 +1,66 @@
+<main id="principal">
+  <section class="capa escuro">
+    <div class="capa-fundo" aria-hidden="true"><img src="assets/img/fachada.jpg" alt=""></div>
+    <div class="conteudo">
+      <p class="trilha" data-topo><a href="index.html">Início</a> / Contato</p>
+      <h1 data-titulo-topo>Fale com a recepção.</h1>
+      <p class="texto-largo" data-topo>O jeito mais rápido de reservar é pelo WhatsApp. Escolha as datas abaixo e a mensagem já vai pronta.</p>
+    </div>
+  </section>
+
+  <section class="com-marmore" style="padding-block:clamp(40px,5vw,64px)">
+    <div class="conteudo">
+      {{RESERVA}}
+    </div>
+  </section>
+
+  <section class="com-marmore" style="padding-block:0 clamp(48px,6vw,80px)">
+    <div class="conteudo">
+      <ul class="canais">
+        <li class="canal" data-sobe><svg><use href="#i-whats"/></svg><h2>WhatsApp</h2><p>Reservas, valores, decoração especial e dúvidas.</p><a class="link" data-whats="Olá! Vim pelo site e quero fazer uma reserva." href="#">Abrir conversa</a></li>
+        <li class="canal" data-sobe><svg><use href="#i-tel"/></svg><h2>Telefone</h2><p>Recepção do hotel.</p><a class="link" data-ligar href="#">Ligar agora</a></li>
+        <li class="canal" data-sobe><svg><use href="#i-pin"/></svg><h2>Endereço</h2><p>Rua Erotides Nogueira, 710, Centro, Xique-Xique, BA. CEP 47400-000.</p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Macedo+Gold+Hotel+Rua+Erotides+Nogueira+710+Xique-Xique+BA" target="_blank" rel="noopener">Ver no mapa</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="secao" style="background:var(--branco)" aria-labelledby="t-local">
+    <div class="conteudo local">
+      <div class="local-texto">
+        <h2 id="t-local" data-titulo>Como chegar.</h2>
+        <ul class="rotas" data-sobe>
+          <li><b>Vindo de Salvador:</b> cerca de 585 km pela BA-052, a Estrada do Feijão.</li>
+          <li><b>Hospital Julieta Viana:</b> perto do hotel.</li>
+          <li><b>Orla do São Francisco:</b> no Centro, a poucos minutos.</li>
+          <li><b>Estacionamento:</b> próprio, para hóspedes.</li>
+        </ul>
+        <div class="local-botoes" data-sobe>
+          <a class="botao botao-escuro" href="https://www.google.com/maps/search/?api=1&amp;query=Macedo+Gold+Hotel+Rua+Erotides+Nogueira+710+Xique-Xique+BA" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Abrir no Google Maps</a>
+          <a class="botao botao-linha" href="https://waze.com/ul?q=Rua%20Erotides%20Nogueira%20710%20Xique-Xique%20BA&amp;navigate=yes" target="_blank" rel="noopener">Abrir no Waze</a>
+        </div>
+      </div>
+      <div class="mapa" data-revela>
+        <a class="mapa-alt" href="https://www.google.com/maps/search/?api=1&amp;query=Macedo+Gold+Hotel+Rua+Erotides+Nogueira+710+Xique-Xique+BA" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Carregando o mapa. Toque para abrir no Google Maps.</a>
+        <iframe title="Mapa com a localização do hotel" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rua%20Erotides%20Nogueira%2C%20710%2C%20Xique-Xique%20BA&amp;z=16&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao com-marmore brilho-marmore" id="duvidas" aria-labelledby="t-duvidas">
+    <div class="conteudo duvidas">
+      <div>
+        <h2 id="t-duvidas" data-titulo>Dúvidas frequentes.</h2>
+        <p class="texto" data-sobe style="margin-top:18px">Não achou a resposta? Pergunte no WhatsApp.</p>
+      </div>
+      <div class="lista-duvidas" data-sobe>
+        <!-- Check-in, pagamento, pets e cancelamento entram aqui quando o hotel confirmar as regras. -->
+        <details open><summary>O café da manhã está incluso?<i></i></summary><p>Sim, em todas as diárias. É servido no restaurante do hotel.</p></details>
+        <details><summary>Vocês decoram o quarto para lua de mel ou surpresa?<i></i></summary><p>Sim. Avise pelo WhatsApp a data e a ocasião, e a recepção explica as opções de decoração. A Suíte Presidencial, com hidromassagem e LED, é a mais pedida.</p></details>
+        <details><summary>Tem estacionamento?<i></i></summary><p>Sim. O hotel tem estacionamento próprio para hóspedes.</p></details>
+        <details><summary>Todos os quartos têm ar-condicionado?<i></i></summary><p>Sim. Todos têm ar-condicionado, TV, wi-fi e banheiro privativo.</p></details>
+        <details><summary>Quem não está hospedado pode usar o restaurante?<i></i></summary><p>Pode. O buffet por quilo no almoço e a hamburgueria à noite são abertos ao público.</p></details>
+        <details><summary>Como faço a reserva?<i></i></summary><p>Escolha as datas no topo desta página e toque em Consultar disponibilidade. O WhatsApp abre com a mensagem pronta e a recepção confirma o valor.</p></details>
+      </div>
+    </div>
+  </section>
+</main>

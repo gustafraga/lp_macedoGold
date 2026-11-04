@@ -1,0 +1,37 @@
+{
+  "dominio": "",
+  "comentario": "Quando o site tiver endereço, coloque em dominio, por exemplo https://www.macedogoldhotel.com.br/ (com a barra no final), e rode montar.cmd de novo.",
+  "paginas": [
+    {
+      "arquivo": "index.html",
+      "titulo": "Macedo Gold Hotel | Hospedagem no Centro de Xique-Xique, BA",
+      "descricao": "Hotel no Centro de Xique-Xique, Bahia: suíte presidencial com hidromassagem, quartos climatizados, café da manhã incluso, estacionamento e restaurante de 230 m². Reserve pelo WhatsApp.",
+      "abertura": true
+    },
+    {
+      "arquivo": "suites.html",
+      "titulo": "Suítes e quartos | Macedo Gold Hotel, Xique-Xique",
+      "descricao": "Suíte Presidencial com hidromassagem e LED, Quarto Master e Quarto Duplo, todos com ar-condicionado, TV, wi-fi e café da manhã incluso.",
+      "abertura": false
+    },
+    {
+      "arquivo": "restaurante.html",
+      "titulo": "Restaurante | Macedo Gold Hotel, Xique-Xique",
+      "descricao": "Restaurante de 230 m² no Centro de Xique-Xique: café da manhã, buffet por quilo no almoço e hamburgueria à noite. Aberto ao público.",
+      "abertura": false
+    },
+    {
+      "arquivo": "contato.html",
+      "titulo": "Contato e como chegar | Macedo Gold Hotel, Xique-Xique",
+      "descricao": "WhatsApp, telefone, endereço e mapa do Macedo Gold Hotel. Rua Erotides Nogueira, 710, Centro, Xique-Xique, BA.",
+      "abertura": false
+    },
+    {
+      "arquivo": "404.html",
+      "titulo": "Página não encontrada | Macedo Gold Hotel",
+      "descricao": "Esta página não existe. Volte para o início do site do Macedo Gold Hotel.",
+      "abertura": false,
+      "foraDoMapa": true
+    }
+  ]
+}

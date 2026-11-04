@@ -1,0 +1,62 @@
+<div class="reserva" id="reservar" data-reserva>
+  <div class="reserva-barra">
+    <button type="button" class="reserva-campo" data-campo="entrada" aria-expanded="false" aria-controls="painel-datas">
+      <span class="rc-rotulo"><svg><use href="#i-cal"/></svg>Check-in</span>
+      <span class="rc-valor vazio">Escolha a data</span>
+    </button>
+    <button type="button" class="reserva-campo" data-campo="saida" aria-expanded="false" aria-controls="painel-datas">
+      <span class="rc-rotulo"><svg><use href="#i-cal"/></svg>Check-out</span>
+      <span class="rc-valor vazio">Escolha a data</span>
+    </button>
+    <button type="button" class="reserva-campo" data-campo="hospedes" aria-expanded="false" aria-controls="painel-hospedes">
+      <span class="rc-rotulo"><svg><use href="#i-pessoas"/></svg>Hóspedes e suíte</span>
+      <span class="rc-valor">2 adultos</span>
+    </button>
+    <button type="button" class="botao botao-ouro" data-enviar><svg><use href="#i-whats"/></svg>Consultar disponibilidade</button>
+  </div>
+
+  <div class="painel-reserva painel-datas" id="painel-datas" role="dialog" aria-modal="false" aria-label="Escolher datas" tabindex="-1" hidden>
+    <div class="painel-topo">
+      <h2 class="painel-titulo" data-titulo-datas>Quando você chega?</h2>
+      <div class="cal-nav">
+        <button type="button" data-mes="-1" aria-label="Mês anterior"><svg><use href="#i-esq"/></svg></button>
+        <button type="button" data-mes="1" aria-label="Próximo mês"><svg><use href="#i-dir"/></svg></button>
+      </div>
+    </div>
+    <div class="atalhos">
+      <button type="button" class="atalho" data-atalho="hoje">Hoje à noite</button>
+      <button type="button" class="atalho" data-atalho="fds">Próximo fim de semana</button>
+      <button type="button" class="atalho" data-atalho="semana">Uma semana</button>
+    </div>
+    <div class="cal-meses" data-meses></div>
+    <div class="painel-rodape">
+      <p class="resumo-noites" data-resumo aria-live="polite">Escolha o dia da chegada.</p>
+      <div class="acoes">
+        <button type="button" class="texto-botao" data-limpar>Limpar</button>
+        <button type="button" class="botao botao-escuro" data-ok-datas>Confirmar datas</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="painel-reserva painel-hospedes" id="painel-hospedes" role="dialog" aria-modal="false" aria-label="Hóspedes e suíte" tabindex="-1" hidden>
+    <div class="painel-topo"><h2 class="painel-titulo">Quem vem?</h2></div>
+    <div class="contador">
+      <div><b>Adultos</b><small>13 anos ou mais</small></div>
+      <div class="contador-ctrl"><button type="button" data-menos="adultos" aria-label="Menos um adulto">−</button><output data-qtd="adultos">2</output><button type="button" data-mais="adultos" aria-label="Mais um adulto">+</button></div>
+    </div>
+    <div class="contador">
+      <div><b>Crianças</b><small>Até 12 anos</small></div>
+      <div class="contador-ctrl"><button type="button" data-menos="criancas" aria-label="Menos uma criança">−</button><output data-qtd="criancas">0</output><button type="button" data-mais="criancas" aria-label="Mais uma criança">+</button></div>
+    </div>
+    <p class="legenda" id="legenda-suite">Suíte</p>
+    <div class="opcoes-suite" role="radiogroup" aria-labelledby="legenda-suite">
+      <label class="opcao"><input type="radio" name="suite" value="Sem preferência" data-suite checked><span class="sem-foto"></span>Sem preferência</label>
+      <label class="opcao"><input type="radio" name="suite" value="Suíte Presidencial" data-suite><img src="assets/img/suite-presidencial.jpg" alt="">Presidencial</label>
+      <label class="opcao"><input type="radio" name="suite" value="Quarto Master" data-suite><img src="assets/img/quarto-master.jpg" alt="">Master</label>
+      <label class="opcao"><input type="radio" name="suite" value="Quarto Duplo" data-suite><img src="assets/img/quarto-duplo.jpg" alt="">Duplo</label>
+    </div>
+    <label class="ocasiao"><input type="checkbox" data-ocasiao><span><b>É uma ocasião especial</b>Lua de mel, aniversário ou surpresa. A recepção explica como fica a decoração.</span></label>
+    <div class="painel-rodape"><span></span><div class="acoes"><button type="button" class="botao botao-escuro" data-ok-hospedes>Pronto</button></div></div>
+  </div>
+  <div class="fundo-painel" data-fundo hidden></div>
+</div>

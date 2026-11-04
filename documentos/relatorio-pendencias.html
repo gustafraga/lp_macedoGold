@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pendências do site Macedo Gold</title>
+<link rel="icon" href="../site/assets/logo/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="../site/css/base.css">
+<style>
+  .rel { max-width: 880px; padding-block: 64px 112px; display: grid; gap: 56px; }
+  .rel header { display: grid; gap: 16px; }
+  .rel h1 { font-size: clamp(2.2rem, 1.5rem + 2.6vw, 3.6rem); }
+  .rel h2 { font-size: var(--t-xl); font-weight: 400; margin-bottom: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .rel section > p { margin-bottom: 18px; }
+  .itens { border-top: 1px solid var(--linha); background: var(--branco); border-radius: 12px; padding: 0 20px; }
+  .itens li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--linha); }
+  .itens li:last-child { border-bottom: 0; }
+  .itens input { width: 20px; height: 20px; margin-top: 4px; accent-color: var(--ouro-escuro); }
+  .itens label { cursor: pointer; }
+  .itens b { display: block; font-weight: 500; }
+  .itens span { color: var(--cinza); font-size: var(--t-s); }
+  .tag { font-size: var(--t-xs); font-weight: 500; padding: 4px 12px; border-radius: 999px; }
+  .alta { background: #f6dfdb; color: #8f2318; }
+  .media { background: #f1e6cf; color: #6b5126; }
+  .ok { background: #dcebdc; color: #2b5d35; }
+  .recebido { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; }
+  .recebido figure { margin: 0; display: grid; gap: 6px; font-size: var(--t-xs); color: var(--cinza); }
+  .recebido img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+  .tabela { overflow-x: auto; background: var(--branco); border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: var(--t-s); }
+  th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--linha); vertical-align: top; }
+  th { font-weight: 500; background: var(--grafite); color: var(--branco); }
+  code { font-size: .85rem; background: var(--marmore); padding: 2px 6px; border-radius: 4px; }
+  .caixa { background: var(--grafite); color: var(--cinza-claro); border-radius: 12px; padding: 24px; display: grid; gap: 8px; }
+  .caixa b { color: var(--ouro); font-weight: 500; }
+</style>
+</head>
+<body class="com-marmore">
+<main class="conteudo rel">
+  <header>
+    <h1>O que falta para o site entrar no ar</h1>
+    <p class="texto-largo">O site já usa a logo e as fotos enviadas. Para ficar pronto para publicar, faltam os itens abaixo. Marque conforme for reunindo e envie tudo junto.</p>
+  </header>
+
+  <section>
+    <h2>Já recebido <span class="tag ok">Aplicado no site</span></h2>
+    <div class="recebido">
+      <figure><img src="../site/assets/logo/simbolo-m.png" alt="">Logo</figure>
+      <figure><img src="../site/assets/img/fachada.jpg" alt="">Fachada</figure>
+      <figure><img src="../site/assets/img/suite-presidencial.jpg" alt="">Presidencial</figure>
+      <figure><img src="../site/assets/img/quarto-master.jpg" alt="">Master</figure>
+      <figure><img src="../site/assets/img/quarto-duplo.jpg" alt="">Duplo</figure>
+      <figure><img src="../site/assets/img/recepcao.jpg" alt="">Recepção</figure>
+      <figure><img src="../site/assets/img/cafe-da-manha.jpg" alt="">Café da manhã</figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>1. Arquivos em qualidade original <span class="tag alta">Essencial</span></h2>
+    <p class="texto">As imagens enviadas vieram do Google e são pequenas (cerca de 240 pixels de largura). No site elas foram ampliadas, mas em telas grandes ficam um pouco borradas. Com os originais, o site fica nítido.</p>
+    <ul class="itens">
+      <li><input type="checkbox" id="a1"><label for="a1"><b>Logo original</b><span>Arquivo do designer (AI, PDF, SVG ou EPS) ou um PNG grande com fundo transparente.</span></label></li>
+      <li><input type="checkbox" id="a2"><label for="a2"><b>As mesmas 6 fotos, em tamanho original</b><span>Direto do celular ou da câmera de quem fotografou. Envie como documento no WhatsApp ou por Google Drive, para não perder qualidade.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Fotos que ainda faltam <span class="tag alta">Essencial</span></h2>
+    <div class="tabela">
+      <table>
+        <thead><tr><th>Arquivo</th><th>O que fotografar</th></tr></thead>
+        <tbody>
+          <tr><td><code>suite-presidencial-cama.jpg</code></td><td>A cama e o quarto da Suíte Presidencial (hoje só temos a banheira)</td></tr>
+          <tr><td><code>decoracao-especial.jpg</code></td><td>Uma suíte já decorada para lua de mel ou surpresa. É a foto que mais vende esse serviço</td></tr>
+          <tr><td><code>banheiro.jpg</code></td><td>Banheiro de um quarto comum</td></tr>
+          <tr><td><code>buffet.jpg</code></td><td>Buffet do almoço (hoje é foto ilustrativa)</td></tr>
+          <tr><td><code>hamburguer.jpg</code></td><td>Um hambúrguer da casa (hoje é foto ilustrativa)</td></tr>
+          <tr><td><code>restaurante-salao.jpg</code></td><td>Salão do restaurante vazio e arrumado, foto horizontal</td></tr>
+          <tr><td><code>compartilhar.jpg</code></td><td>Imagem que aparece quando o link é enviado no WhatsApp (1200 × 630, pode ser a fachada)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Quartos e decoração especial <span class="tag alta">Essencial</span></h2>
+    <ul class="itens">
+      <li><input type="checkbox" id="b1"><label for="b1"><b>Confirmar os nomes dos quartos</b><span>O site mostra Suíte Presidencial, Quarto Master e Quarto Duplo. Existem outros tipos (Standard, Triplo, Família)? Quantos quartos há de cada tipo?</span></label></li>
+      <li><input type="checkbox" id="b2"><label for="b2"><b>Camas e capacidade de cada tipo</b><span>Ex.: a Presidencial tem cama king? Quantas pessoas cabem em cada quarto?</span></label></li>
+      <li><input type="checkbox" id="b3"><label for="b3"><b>O que vem na decoração especial</b><span>Pétalas, balões, espumante, cesta de café da manhã, bolo? Tem pacotes com preço? Com quantos dias de antecedência precisa pedir?</span></label></li>
+      <li><input type="checkbox" id="b4"><label for="b4"><b>Preço "a partir de" de cada quarto</b><span>Opcional, mas mostrar um valor inicial costuma aumentar os contatos.</span></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. Contatos e funcionamento <span class="tag alta">Essencial</span></h2>
+    <ul class="itens">
+      <li><input type="checkbox" id="c1"><label for="c1"><b>WhatsApp de reservas</b><span>Com DDD. Todas as consultas do site vão para este número.</span></label></li>
+      <li><input type="checkbox" id="c2"><label for="c2"><b>Telefone fixo, e-mail e @ do Instagram</b><span>Vimos o @ do Instagram nas fotos, mas cortado. Envie completo.</span></label></li>
+      <li><input type="checkbox" id="c3"><label for="c3"><b>Confirmar o número do endereço</b><span>Encontramos 710, 310 e 170 em sites diferentes. O site usa Rua Erotides Nogueira, 710.</span></label></li>
+      <li><input type="checkbox" id="c4"><label for="c4"><b>Horários de check-in e check-out</b></label></li>
+      <li><input type="checkbox" id="c5"><label for="c5"><b>Horários do café, do almoço e da hamburgueria</b><span>E os dias em que cada um funciona.</span></label></li>
+      <li><input type="checkbox" id="c6"><label for="c6"><b>Formas de pagamento e nota fiscal para empresas</b></label></li>
+      <li><input type="checkbox" id="c7"><label for="c7"><b>Política para crianças, pets e cancelamento</b></label></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5. Para fortalecer o site <span class="tag media">Recomendado</span></h2>
+    <ul class="itens">
+      <li><input type="checkbox" id="d1"><label for="d1"><b>3 a 5 avaliações reais de hóspedes</b><span>Do Google ou do TripAdvisor, com primeiro nome e cidade. Entram numa seção de depoimentos.</span></label></li>
+      <li><input type="checkbox" id="d2"><label for="d2"><b>Um vídeo curto da Suíte Presidencial com o LED ligado</b><span>10 a 20 segundos, celular na vertical. Pode virar o fundo animado da seção de noites especiais.</span></label></li>
+      <li><input type="checkbox" id="d3"><label for="d3"><b>Distâncias até o Hospital Julieta Viana e a orla</b></label></li>
+      <li><input type="checkbox" id="d4"><label for="d4"><b>Domínio e hospedagem</b><span>Ex.: macedogoldhotel.com.br. Se já existir, o nome de quem administra.</span></label></li>
+    </ul>
+  </section>
+
+  <div class="caixa">
+    <b>Onde cada coisa entra</b>
+    <span>Fotos: substituir o arquivo de mesmo nome em <code>site/assets/img</code>. WhatsApp e telefone: início do arquivo <code>site/js/main.js</code>. O restante é ajustado no texto das páginas.</span>
+  </div>
+</main>
+</body>
+</html>

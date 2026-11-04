@@ -1,0 +1,55 @@
+/* =========================================================
+   MACEDO GOLD HOTEL · efeitos.css
+   Camada de efeitos visuais. Cada bloco é independente:
+   para desligar um efeito, apague ou comente o bloco.
+   ========================================================= */
+
+/* ---------- 1. Luz dourada no topo (segue o cursor no computador) ---------- */
+.hero > .conteudo { position: relative; z-index: 1; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(560px circle at var(--mx, 74%) var(--my, 36%), rgba(183, 150, 98, .2), transparent 64%);
+}
+
+/* ---------- 2. Fotos do topo "respiram" devagar ---------- */
+@keyframes respira { from { scale: 1; } to { scale: 1.07; } }
+.colagem img { animation: respira 16s ease-in-out infinite alternate; }
+.colagem .foto-b img { animation-delay: -8s; }
+
+/* ---------- 3. Reflexo de luz passando sobre o mármore ---------- */
+@keyframes passa-luz { from { transform: translateX(-80%) skewX(-12deg); } to { transform: translateX(320%) skewX(-12deg); } }
+.brilho-marmore { position: relative; overflow: hidden; }
+.brilho-marmore > * { position: relative; z-index: 1; }
+.brilho-marmore::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 38%; z-index: 0; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .5), transparent);
+  animation: passa-luz 22s ease-in-out infinite;
+}
+
+/* ---------- 4. Barra de progresso de leitura no cabeçalho ---------- */
+.topo::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--ouro);
+  transform-origin: left; transform: scaleX(var(--progresso, 0)); opacity: 0; transition: opacity .3s;
+}
+.topo.solido::after { opacity: 1; }
+
+/* ---------- 5. Assinatura grande no rodapé ---------- */
+.rodape-marca { display: grid; justify-items: center; gap: 22px; padding-block: clamp(72px, 10vw, 128px) 0; text-align: center; color: var(--ouro); text-transform: uppercase; line-height: 1; overflow: hidden; }
+.rodape-marca img { width: 64px; height: 64px; border-radius: 2px; }
+.rodape-marca b { font-weight: 300; font-size: clamp(2.4rem, 1rem + 6.4vw, 7.5rem); letter-spacing: .28em; margin-right: -.28em; }
+.rodape-marca small { font-size: clamp(.95rem, .6rem + 1.3vw, 1.7rem); letter-spacing: .5em; margin-right: -.5em; color: var(--cinza-claro); }
+
+/* ---------- 6. Transição suave entre as páginas (navegadores compatíveis) ---------- */
+@view-transition { navigation: auto; }
+.topo { view-transition-name: topo; }
+::view-transition-old(root) { animation: vt-sai .35s cubic-bezier(.4, 0, 1, 1) both; }
+::view-transition-new(root) { animation: vt-entra .7s cubic-bezier(.16, 1, .3, 1) both; }
+@keyframes vt-sai { to { opacity: 0; transform: translateY(-20px); } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(28px); } }
+
+/* ---------- Movimento reduzido: desliga os efeitos contínuos ---------- */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .colagem img, .brilho-marmore::before { animation: none; }
+  .brilho-marmore::before { display: none; }
+}

@@ -1,0 +1,8 @@
+# Versoes antigas e rascunhos (ficam so no computador)
+arquivo/
+
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+*.tmp
