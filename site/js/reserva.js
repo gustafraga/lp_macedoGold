@@ -52,6 +52,12 @@
         gsap.fromTo(fundo, { opacity: 0 }, { opacity: 1, duration: .3 });
       }
       if (matchMedia('(max-width: 820px)').matches) document.documentElement.style.overflow = 'hidden';
+      else {
+        // No computador, se o painel abrir abaixo da dobra (telas baixas), rola até ele caber
+        const r = painel.getBoundingClientRect();
+        const falta = r.bottom - window.innerHeight + 16;
+        if (falta > 0) window.scrollBy({ top: Math.min(falta, r.top - 90), behavior: 'smooth' });
+      }
       document.documentElement.classList.add('painel-aberto');
       if (soltarFoco) soltarFoco();
       soltarFoco = window.MacedoGold?.prenderFoco ? window.MacedoGold.prenderFoco(painel) : null;
