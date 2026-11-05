@@ -76,7 +76,7 @@
       html.style.overflow = abrir ? 'hidden' : '';
       if (abrir) {
         soltar = prenderFoco(topo);
-        if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) gsap.from(menu.querySelectorAll('a'), { y: 30, opacity: 0, stagger: .06, duration: .7, ease: 'expo.out', delay: .15 });
+        if (window.gsap) gsap.from(menu.querySelectorAll('a'), { y: 30, opacity: 0, stagger: .06, duration: .7, ease: 'expo.out', delay: .15 });
       } else if (soltar) { soltar(); soltar = null; }
     };
     botaoMenu.addEventListener('click', () => alternar(!menu.classList.contains('aberto')));

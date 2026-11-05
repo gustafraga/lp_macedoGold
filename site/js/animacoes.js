@@ -7,7 +7,10 @@
   const html = document.documentElement;
   if (!window.gsap || !window.ScrollTrigger) { html.classList.remove('intro'); return; }
   gsap.registerPlugin(ScrollTrigger);
+  // Quem desligou as animações no sistema (muito comum no Windows) vê uma versão suave:
+  // os efeitos aparecem como fade, sem deslizar nem parallax.
   const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const de = v => (reduz ? 0 : v);
   const $$ = s => gsap.utils.toArray(s);
 
   /* ---------- Quebra títulos em palavras ---------- */
@@ -35,20 +38,18 @@
   function entradaTopo() {
     const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
     const h1 = document.querySelector('[data-titulo-topo]');
-    if (h1) tl.from(emPalavras(h1), { yPercent: 115, duration: 1.2, stagger: .07 });
-    tl.from('[data-topo]', { y: 28, opacity: 0, duration: 1, stagger: .1 }, '-=.9');
+    if (h1) tl.from(emPalavras(h1), { yPercent: de(115), opacity: reduz ? 0 : 1, duration: 1.2, stagger: .07 });
+    tl.from('[data-topo]', { y: de(28), opacity: 0, duration: 1, stagger: .1 }, '-=.9');
     $$('.colagem figure').forEach((f, i) => {
       tl.fromTo(f, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.4, ease: 'expo.inOut' }, i ? '-=1.15' : '-=1.1');
-      tl.from(f.querySelector('img'), { scale: 1.35, duration: 1.8 }, '<');
+      if (!reduz) tl.from(f.querySelector('img'), { scale: 1.35, duration: 1.8 }, '<');
     });
-    if (document.querySelector('.selo')) tl.from('.selo', { scale: 0, rotate: -120, duration: 1.2 }, '-=1');
-    if (document.querySelector('.hero .reserva-barra')) tl.from('.hero .reserva-barra', { y: 40, opacity: 0, duration: 1 }, '-=1');
+    if (document.querySelector('.selo')) tl.from('.selo', { scale: reduz ? 1 : 0, rotate: de(-120), opacity: 0, duration: 1.2 }, '-=1');
+    if (document.querySelector('.hero .reserva-barra')) tl.from('.hero .reserva-barra', { y: de(40), opacity: 0, duration: 1 }, '-=1');
     return tl;
   }
 
-  if (reduz) {
-    html.classList.remove('intro');
-  } else if (html.classList.contains('intro')) {
+  if (html.classList.contains('intro')) {
     const tl = gsap.timeline();
     // Abertura curta (cerca de 1,3 s) para não segurar quem tem pressa
     tl.from('.intro-tela img', { scale: .6, opacity: 0, rotate: -8, duration: .6, ease: 'expo.out' })
@@ -59,16 +60,15 @@
   } else {
     entradaTopo();
   }
-  if (reduz) return;
 
   /* ---------- Títulos de seção ---------- */
   $$('[data-titulo]').forEach(el => {
-    gsap.from(emPalavras(el), { yPercent: 115, duration: 1.15, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: el, start: 'top 86%' } });
+    gsap.from(emPalavras(el), { yPercent: de(115), opacity: reduz ? 0 : 1, duration: 1.15, ease: 'expo.out', stagger: .05, scrollTrigger: { trigger: el, start: 'top 86%' } });
   });
 
   /* ---------- Blocos que sobem ---------- */
   const sobem = $$('[data-sobe]');
-  gsap.set(sobem, { opacity: 0, y: 44 });
+  gsap.set(sobem, { opacity: 0, y: de(44) });
   ScrollTrigger.batch(sobem, {
     start: 'top 90%', once: true,
     onEnter: lote => gsap.to(lote, { opacity: 1, y: 0, duration: 1.1, ease: 'expo.out', stagger: .1, overwrite: true }),
@@ -79,15 +79,15 @@
     const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: 'top 85%' } });
     tl.fromTo(el, { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 1.5, ease: 'expo.inOut' });
     const img = el.querySelector('img');
-    if (img) tl.from(img, { scale: 1.3, duration: 2, ease: 'expo.out' }, '<');
+    if (img && !reduz) tl.from(img, { scale: 1.3, duration: 2, ease: 'expo.out' }, '<');
   });
 
   /* ---------- Profundidade (parallax) ---------- */
-  $$('[data-paralaxe]').forEach(el => {
+  if (!reduz) $$('[data-paralaxe]').forEach(el => {
     const img = el.querySelector('img');
     gsap.fromTo(img, { yPercent: -8 }, { yPercent: 0, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } });
   });
-  if (document.querySelector('.colagem')) {
+  if (!reduz && document.querySelector('.colagem')) {
     gsap.to('.colagem .foto-a', { y: -50, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
     gsap.to('.colagem .foto-b', { y: 40, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
   }

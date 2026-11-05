@@ -155,8 +155,10 @@ img[src*="suite-presidencial"] { object-position: 50% 92%; }
 
 /* ================= Responsivo ================= */
 @media (max-width: 1080px) {
-  .refeicao { grid-template-columns: 100px minmax(0, 1fr); }
-  .refeicao img { display: none; }
+  /* Celular e tablet: a foto de cada refeição vira uma faixa larga embaixo do texto */
+  .refeicao { grid-template-columns: 100px minmax(0, 1fr); align-items: start; }
+  .refeicao > img, .refeicao > .ilustr { grid-column: 2; display: block; width: 100%; max-width: 440px; }
+  .refeicao img { width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 10px; }
   .todas { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
@@ -178,7 +180,8 @@ img[src*="suite-presidencial"] { object-position: 50% 92%; }
   .hero { z-index: auto; }
 }
 @media (max-width: 560px) {
-  .refeicao { grid-template-columns: 1fr; gap: 6px; }
+  .refeicao { grid-template-columns: 1fr; gap: 8px; }
+  .refeicao > img, .refeicao > .ilustr { grid-column: 1; max-width: none; margin-top: 8px; }
   .mosaico { grid-auto-rows: 150px; gap: 8px; }
   .m-larga { grid-column: span 2; }
   .todas { grid-template-columns: 1fr; }

@@ -24,7 +24,7 @@
   (function () {
     var d = document.documentElement;
     try {
-      if (false && !sessionStorage.getItem('mg-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (false && !sessionStorage.getItem('mg-intro')) {
         d.classList.add('intro');
         setTimeout(function () { d.classList.remove('intro'); }, 2200);
       }

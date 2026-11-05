@@ -47,9 +47,9 @@
 @keyframes vt-sai { to { opacity: 0; transform: translateY(-20px); } }
 @keyframes vt-entra { from { opacity: 0; transform: translateY(28px); } }
 
-/* ---------- Movimento reduzido: desliga os efeitos contínuos ---------- */
+/* ---------- Movimento reduzido: mantém os efeitos, só troca o deslize entre páginas por fade ---------- */
 @media (prefers-reduced-motion: reduce) {
-  @view-transition { navigation: none; }
-  .colagem img, .brilho-marmore::before { animation: none; }
-  .brilho-marmore::before { display: none; }
+  ::view-transition-old(root) { animation: vt-fade .3s ease both reverse; }
+  ::view-transition-new(root) { animation: vt-fade .5s ease both; }
+  @keyframes vt-fade { from { opacity: 0; } }
 }

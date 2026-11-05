@@ -45,7 +45,7 @@
       Object.values(campos).forEach(c => c.setAttribute('aria-expanded', 'false'));
       campo && campo.setAttribute('aria-expanded', 'true');
       campoAtivo = campo;
-      if (window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (window.gsap) {
         const celular = matchMedia('(max-width: 820px)').matches;
         gsap.fromTo(painel, celular ? { yPercent: 100 } : { opacity: 0, y: -10, scale: .98 },
           { yPercent: 0, opacity: 1, y: 0, scale: 1, duration: .5, ease: 'expo.out' });
@@ -68,7 +68,7 @@
       if (soltarFoco) { soltarFoco(); soltarFoco = null; }
       if (!imediato && campoAtivo) campoAtivo.focus({ preventScroll: true });
       const fim = () => { p.hidden = true; fundo.hidden = true; };
-      if (!imediato && window.gsap && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      if (!imediato && window.gsap) {
         const celular = matchMedia('(max-width: 820px)').matches;
         gsap.to(p, { ...(celular ? { yPercent: 100 } : { opacity: 0, y: -8 }), duration: .3, ease: 'power2.in', onComplete: fim });
         gsap.to(fundo, { opacity: 0, duration: .3 });
